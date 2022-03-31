@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shay.Dev-Skills</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+<body>
+    <body>
+        <h1>My Dev Skills, Their 1-10 Rating, And Current Sickness Status</h1>
+        <h6><h6>Last Updated : <%= time %></h1>
+        </h2>
+        <ul>
+          <% skills.forEach(function(s) { %>
+            <li>
+              <a href="/skills/<%= s.id %>"><%= s.skill %></a>
+              <%= s.skill %>
+                - 
+              <%= s.sick ? 'sick' : 'not sick' %>
+            </li>
+            <li>
+              <form action="/skills/<%= s.id %>?_method=DELETE"
+                class="delete-form" method="POST">
+                <button type="submit">X</button>
+              </form>
+          <% }); %>
+        </ul>
+        <a href="/skills/new">Add A New Skill</a>
+      </body>
+</body>
+</html>
